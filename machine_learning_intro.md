@@ -82,7 +82,6 @@ We can see that although *setosa* has distinctly smaller petals, there is a lot 
 ------------------------------------------------------------------------
 
 ## 2. The validation dataset
--------------------------
 
 We are going to create a model to predict the species identity based on the floral features. To assess whether the model is accurate we need a set of samples with the same measurements, a known species identity that weren't used for model training.
 
@@ -119,7 +118,6 @@ nrow(iris_validation)
 ------------------------------------------------------------------------
 
 ## 3. Training models
-------------------
 
 To train the models, we are going to use k-fold cross-validation. This splits the data into k parts, uses k-1 parts to train the model and the remaining part to test. We repeat this for each possible combination of parts and then repeat the whole process with different data partitions.
 
@@ -155,7 +153,6 @@ fit.svm <- train(Species~., data=iris_training, method="svmLinear", metric=metri
 ------------------------------------------------------------------------
 
 ## 4. Selecting a model
---------------------
 
 Based on the cross-validation method, we have trained a model and measured its accuracy within the training dataset. We can visualize that here to choose the model that is most accurate.
 
@@ -221,7 +218,6 @@ print(fit.lda)
 ------------------------------------------------------------------------
 
 ## 5. Validating the model
------------------------
 
 After creating our model, we now want to validate the accuracy of our model using independent data. Keep in mind, the accuracy we have seen is based on testing within the data that was used to create the model itself. Its possible for a model to be highly accurate in the training set and innacurate for the broader set of data. To do this, we leverage the validation subset that we stored at the beginning and didn't use for model training.
 
