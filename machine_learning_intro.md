@@ -82,6 +82,7 @@ We can see that although *setosa* has distinctly smaller petals, there is a lot 
 
 ------------------------------------------------------------------------
 
+
 2. The validation dataset
 -------------------------
 
@@ -119,6 +120,7 @@ nrow(iris_validation)
 
 ------------------------------------------------------------------------
 
+
 3. Training models
 ------------------
 
@@ -154,6 +156,7 @@ fit.svm <- train(Species~., data=iris_training, method="svmLinear", metric=metri
 3.  What is a scenario where accuracy is high but kappa is low? Why would this occur?
 
 ------------------------------------------------------------------------
+
 
 4. Selecting a model
 --------------------
@@ -220,6 +223,7 @@ print(fit.lda)
 2.  Would you expect the same accuracy if you tested it on a whole other dataset? Why or why not?
 
 ------------------------------------------------------------------------
+
 
 5. Validating the model
 -----------------------
