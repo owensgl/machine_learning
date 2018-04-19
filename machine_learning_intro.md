@@ -6,7 +6,7 @@ Introduction to Machine Learning
 
 In this example, we're going to use machine learning to classify genus *Iris* samples into different species. Species often overlap in any individual trait, so machine learning can let us use information from multiple traits at once to differentiate.
 
-![The Iris species in question.](/Users/gregoryowens/Documents/iris-machinelearning.png)
+![The Iris species in question.](machine_learning_intro_files/figure-markdown_github/iris-machinelearning.png)
 
 We first need to load the data and some libraries.
 
@@ -124,7 +124,7 @@ nrow(iris_validation)
 
 To train the models, we are going to use k-fold cross-validation. This splits the data into k parts, uses k-1 parts to train the model and the remaining part to test. We repeat this for each possible combination of parts and then repeat the whole process with different data partitions.
 
-![Crossfold validation.](/Users/gregoryowens/Documents/K-fold_cross_validation_EN.jpg)
+![Crossfold validation.]machine_learning_intro_files/figure-markdown_github/K-fold_cross_validation_EN.jpg)
 
 During this training, we also have to determine how to evaluate success. We are going to use *Accuracy*, which is simply the proportion of correct predictions in the test data. Another measure is *Kappa*, which accounts for the expected accuracy.
 
