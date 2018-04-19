@@ -258,7 +258,7 @@ confusionMatrix(predictions, iris_validation$Species)
     ## Detection Prevalence        0.3333            0.3667           0.3000
     ## Balanced Accuracy           1.0000            0.9750           0.9500
 
-Our model is 100% accurate for the validation set, which means that it works well and our estimate model accuracy is accurate.
+Our model is 97% accurate for the validation set, which means that it works well and our estimate model accuracy is accurate.
 
 ### Study Questions:
 
