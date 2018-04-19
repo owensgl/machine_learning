@@ -6,7 +6,7 @@ Introduction to Machine Learning
 
 In this example, we're going to use machine learning to classify genus *Iris* samples into different species. Species often overlap in any individual trait, so machine learning can let us use information from multiple traits at once to differentiate.
 
-![The Iris species in question.](machine_learning_intro_files/figure-markdown_github/iris-machinelearning.png)
+![The Iris species in question.](/Users/gregoryowens/Documents/iris-machinelearning.png)
 
 We first need to load the data and some libraries.
 
@@ -82,7 +82,6 @@ We can see that although *setosa* has distinctly smaller petals, there is a lot 
 
 ------------------------------------------------------------------------
 
-
 2. The validation dataset
 -------------------------
 
@@ -120,13 +119,12 @@ nrow(iris_validation)
 
 ------------------------------------------------------------------------
 
-
 3. Training models
 ------------------
 
 To train the models, we are going to use k-fold cross-validation. This splits the data into k parts, uses k-1 parts to train the model and the remaining part to test. We repeat this for each possible combination of parts and then repeat the whole process with different data partitions.
 
-![Crossfold validation.](machine_learning_intro_files/figure-markdown_github/K-fold_cross_validation_EN.jpg)
+![Crossfold validation.](/Users/gregoryowens/Documents/K-fold_cross_validation_EN.jpg)
 
 During this training, we also have to determine how to evaluate success. We are going to use *Accuracy*, which is simply the proportion of correct predictions in the test data. Another measure is *Kappa*, which accounts for the expected accuracy.
 
@@ -157,7 +155,6 @@ fit.svm <- train(Species~., data=iris_training, method="svmLinear", metric=metri
 
 ------------------------------------------------------------------------
 
-
 4. Selecting a model
 --------------------
 
@@ -179,15 +176,15 @@ summary(model.results)
     ## 
     ## Accuracy 
     ##       Min. 1st Qu. Median   Mean 3rd Qu. Max. NA's
-    ## lda 0.9167  1.0000      1 0.9833       1    1    0
-    ## rf  0.9167  0.9375      1 0.9750       1    1    0
-    ## svm 0.9167  0.9375      1 0.9750       1    1    0
+    ## lda 0.8333  1.0000      1 0.9750       1    1    0
+    ## rf  0.7500  0.9167      1 0.9500       1    1    0
+    ## svm 0.8333  0.9167      1 0.9583       1    1    0
     ## 
     ## Kappa 
     ##      Min. 1st Qu. Median   Mean 3rd Qu. Max. NA's
-    ## lda 0.875  1.0000      1 0.9750       1    1    0
-    ## rf  0.875  0.9062      1 0.9625       1    1    0
-    ## svm 0.875  0.9062      1 0.9625       1    1    0
+    ## lda 0.750   1.000      1 0.9625       1    1    0
+    ## rf  0.625   0.875      1 0.9250       1    1    0
+    ## svm 0.750   0.875      1 0.9375       1    1    0
 
 ``` r
 # plot accuracy
@@ -214,8 +211,8 @@ print(fit.lda)
     ## Summary of sample sizes: 108, 108, 108, 108, 108, 108, ... 
     ## Resampling results:
     ## 
-    ##   Accuracy   Kappa
-    ##   0.9833333  0.975
+    ##   Accuracy  Kappa 
+    ##   0.975     0.9625
 
 ### Study Questions:
 
@@ -223,7 +220,6 @@ print(fit.lda)
 2.  Would you expect the same accuracy if you tested it on a whole other dataset? Why or why not?
 
 ------------------------------------------------------------------------
-
 
 5. Validating the model
 -----------------------
@@ -242,8 +238,8 @@ confusionMatrix(predictions, iris_validation$Species)
     ##             Reference
     ## Prediction   setosa versicolor virginica
     ##   setosa         10          0         0
-    ##   versicolor      0          9         0
-    ##   virginica       0          1        10
+    ##   versicolor      0         10         1
+    ##   virginica       0          0         9
     ## 
     ## Overall Statistics
     ##                                           
@@ -258,14 +254,14 @@ confusionMatrix(predictions, iris_validation$Species)
     ## Statistics by Class:
     ## 
     ##                      Class: setosa Class: versicolor Class: virginica
-    ## Sensitivity                 1.0000            0.9000           1.0000
-    ## Specificity                 1.0000            1.0000           0.9500
-    ## Pos Pred Value              1.0000            1.0000           0.9091
-    ## Neg Pred Value              1.0000            0.9524           1.0000
+    ## Sensitivity                 1.0000            1.0000           0.9000
+    ## Specificity                 1.0000            0.9500           1.0000
+    ## Pos Pred Value              1.0000            0.9091           1.0000
+    ## Neg Pred Value              1.0000            1.0000           0.9524
     ## Prevalence                  0.3333            0.3333           0.3333
-    ## Detection Rate              0.3333            0.3000           0.3333
-    ## Detection Prevalence        0.3333            0.3000           0.3667
-    ## Balanced Accuracy           1.0000            0.9500           0.9750
+    ## Detection Rate              0.3333            0.3333           0.3000
+    ## Detection Prevalence        0.3333            0.3667           0.3000
+    ## Balanced Accuracy           1.0000            0.9750           0.9500
 
 Our model is 100% accurate for the validation set, which means that it works well and our estimate model accuracy is accurate.
 
