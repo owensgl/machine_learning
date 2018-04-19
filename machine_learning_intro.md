@@ -1,7 +1,7 @@
 Introduction to Machine Learning
 ================
 
-1. The data
+## 1. The data
 -----------
 
 In this example, we're going to use machine learning to classify genus *Iris* samples into different species. Species often overlap in any individual trait, so machine learning can let us use information from multiple traits at once to differentiate.
